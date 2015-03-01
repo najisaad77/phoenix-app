@@ -1,0 +1,138 @@
+<template name="login">
+
+{{#ionView}}
+    {{#ionContent}}
+      {{> atForm}}
+    {{/ionContent}}
+  {{/ionView}}
+
+
+
+<!-- 
+  <img src="/phoenix.png" class="img-responsive logo fix-overflow"/>
+  <div class="panel panel-default">  
+    <div class="panel-body">
+      <h3>Phoenix Portal</h3>
+      <form role="form" id="login-form">
+        <div class="form-group">
+          <input type="email" class="form-control" id="login-email" placeholder="email address" />
+          <div class="row">
+            <div class="col-xs-9">
+              <input type="password" class="form-control" id="login-password" placeholder="password" />
+            </div>
+            <div class="col-xs-3">
+              <a class="btn-default" id="password-recovery" href="{{pathFor 'recover'}}">Forgot?</a>
+            </div>
+          </div>
+          <a type="button" class="btn btn-default pull-left" id="register-redirect" href="{{pathFor 'register'}}">Register</a>
+          <input type="submit" class="btn btn-primary pull-right" value="Sign in" />
+      	</div>
+    	</form>
+    </div>
+  </div>
+ --></template>
+
+
+
+<template name="register">
+  <img src="/phoenix.png" class="img-responsive logo fix-overflow"/>
+  <div class="panel panel-default">  
+    <div class="panel-body">
+      <form role="form" id="register-form">
+        <div class="form-group">
+          <input type="email" class="form-control" id="account-email" placeholder="email address" />
+          <input type="password" class="form-control" id="first-password" placeholder="new password" />
+          <input type="password" class="form-control" id="second-password" placeholder="confirm password" />
+          <a type="button" class="btn btn-default pull-left" id="login-redirect" href="{{pathFor 'login'}}">Back</a>
+          <input type="submit" class="btn btn-primary pull-right" value="Create account" />
+        </div>
+      </form>
+    </div>
+  </div>
+</template>
+
+
+<template name="newProfile">
+  <img src="/phoenix.png" class="img-responsive logo fix-overflow"/>
+  <div class="panel panel-default">  
+    <div class="panel-body">
+      <form role="form" id="new-profile">
+        <div class="form-group">
+          <input type="text" class="form-control" id="first-name" placeholder="first name" />
+          <input type="text" class="form-control" id="last-name" placeholder="last name" />
+          <select class="form-control" id="grade">
+            <option selected>grade</option>
+            <option value="Form 1">Form 1</option>
+            <option value="Form 2">Form 2</option>
+            <option value="Form 3">Form 3</option>
+            <option value="Form 4">Form 4</option>
+            <option value="Form 5">Form 5</option>
+            <option value="IB 1">IB 1</option>
+            <option value="IB 2">IB 2</option>
+          </select>
+          <a type="button" class="btn btn-default pull-left" id="register-redirect" href="{{pathFor 'register'}}">Back</a>
+          <input type="submit" class="btn btn-primary pull-right" value="Create account" />
+        </div>
+      </form>
+    </div>
+  </div>
+</template>
+
+
+<!-- <template name="profile">
+  <img src="/phoenix.png" class="img-responsive logo fix-overflow"/>
+  <div class="panel panel-default">  
+    <div class="panel-body">
+      <form role="form" id="profile-form-two">
+        <div class="form-group">
+          <input type="text" class="form-control" id="country" placeholder="country of origin" />
+          <select class="form-control" id="hostel">
+            <option selected>hostel</option>
+            <option value="Form 5">Daybug</option>
+            <option value="Form 1">Ekukulweni</option>
+            <option value="Form 2">Esiveni</option>
+            <option value="Form 3">Emhlabeni</option>
+            <option value="Form 4">Elangeni</option>
+          </select>
+          <select class="form-control" id="house">
+            <option selected>house</option>
+            <option value="Form 1">Guedes</option>
+            <option value="Form 2">Henderson</option>
+            <option value="Form 3">Stern</option>
+          </select>
+          <input type="radio" name="sex" value="Male"/><p>Male</p>
+          <input type="radio" name="sex" value="Female"/><p>Female</p>
+          <a type="button" class="btn btn-default pull-left" id="register-redirect" href="{{pathFor 'register'}}">Back</a>
+          <input type="submit" class="btn btn-primary pull-right" value="Update account" />
+        </div>
+      </form>
+    </div>
+  </div>
+</template> -->
+
+
+<template name="passwordRecovery">
+	{{#if resetPassword}}
+  	<form id="new-password" action="action">
+    	<div>
+      	<input type="text" />
+      	<input type="submit" class="btn btn-default" value="Change Password" />
+    	</div>
+  	</form>
+	{{else}}
+  	<img src="/phoenix.png" class="img-responsive logo fix-overflow"/>
+    <div class="panel panel-default">  
+      <div class="panel-body">
+        <h3>It happens...</h3>
+        <p>Enter your username below and we'll send you a new password to your email address.</p>
+        <form role="form" id="login-form">
+          <div class="form-group">
+          	<input type="username" class="form-control" id="account-email" placeholder="username" />
+        	  <a type="button" class="btn btn-default pull-left" id="login-redirect" href="{{pathFor 'login'}}">Back</a>
+            <input type="submit" class="btn btn-default btn-warning disabled pull-right" value="Reset password" />
+          </div>
+        </form>
+    	</div>
+  	</div>
+	{{/if}}
+</template>

@@ -1,0 +1,13 @@
+<template name="UsersDetail">
+	{{#with currUser}}
+        <form class="edit-todo" id="edit-user">
+          Username:
+          <input type="text" name="username" value="{{profile.name}}" />
+          Firstname:
+          <input type="text" name="firstname" value="{{profile.firstname}}" />
+          Lastname:
+          <input type="text" name="lastname" value="{{profile.lastname}}" />
+          <button type="submit" style="width: 100px;height:50px">Save user</button>
+        </form>
+    {{/with}}
+</template>

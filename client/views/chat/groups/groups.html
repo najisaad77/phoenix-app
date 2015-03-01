@@ -1,0 +1,42 @@
+<template name="chatGroups">
+
+  {{#contentFor "headerButtonLeft"}}
+      <button class="button button-clear pull-left" data-ion-menu-toggle="left">
+      {{#if isAndroid}}
+        {{> ionIcon icon='android-more-vertical'}}
+      {{else}}
+        {{> ionIcon icon='navicon'}}
+      {{/if}}
+    </button>
+    <!-- <button class="button button-clear" data-action="logout">{{> ionIcon icon="log-out"}}</button> -->
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Groups</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear" id="create-group" data-ion-modal="_groupNew">{{> ionIcon icon='compose'}}</button>
+  {{/contentFor}}
+
+
+  {{#ionView}}
+    {{#ionContent}}
+      {{#ionList}}
+        {{#ionItem}}
+          <h1>Groups</h1>
+          <p>Coming soon.</p>
+        {{/ionItem}}
+          <!-- {{#each convos}}
+            {{#ionItem path="messages.show" buttonRight=true avatar=true class="item-icon-right"}}
+              <img src="/profile.jpg">
+              <h2>{{usernames}}</h2>
+              <p>Last updated: <span data-livestamp="{{dateUpdated}}"></span></p>
+              {{> ionIcon icon='ios-arrow-forward' class="positive"}}
+            {{/ionItem}}
+          {{/each}} -->
+        {{/ionList}}
+    {{/ionContent}}
+  {{/ionView}}
+
+</template>

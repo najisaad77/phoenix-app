@@ -1,0 +1,154 @@
+<template name="neutralLayout">
+{{#ionBody}}
+
+  {{#ionSideMenuContainer side="left"}}
+
+    {{> sidemenu}}
+
+    {{#ionSideMenuContent}}
+  
+      {{> ionNavBar class="bar-dark"}}
+
+      {{#ionNavView}}
+        {{> yield}}
+      {{/ionNavView}}
+
+    {{/ionSideMenuContent}}
+
+  {{/ionSideMenuContainer}}
+
+{{/ionBody}}
+</template>
+
+
+
+<template name="outsideLayout">
+  {{#ionBody}}
+
+    {{#ionNavView}}
+      {{> yield}}
+      {{#ionFooterBar class="bar bar-footer"}}
+        <div class="title">Created by <a href="http://connorbaer.org">Connor Bär</a>.</div>
+      {{/ionFooterBar}}
+    {{/ionNavView}}
+
+  {{/ionBody}}
+</template>
+
+
+
+<template name="sidemenu">
+  {{#ionSideMenus}}
+
+    {{#ionSideMenu width="200"}}
+      <div class="bar bar-header bar-dark">
+        <button class="button button-clear" data-action=settings>
+        {{#if isAndroid}}
+          {{> ionIcon icon='android-settings'}}
+        {{else}}
+          {{> ionIcon icon="ios-cog-outline"}}
+        {{/if}} Settings</button>
+      </div>
+      <div class="content has-header">
+        <div class="list">
+          <div class="item item-icon-left" data-action=chat data-ion-menu-close>
+            {{#if isAndroid}}
+              {{> ionIcon icon='android-chat'}}
+            {{else}}
+              {{> ionIcon icon="ios-chatbubble-outline"}}
+            {{/if}} Chat
+          </div>
+          <div class="item item-icon-left" data-action=news data-ion-menu-close>
+            {{#if isAndroid}}
+              {{> ionIcon icon='ios-paper'}}
+            {{else}}
+              {{> ionIcon icon="ios-paper-outline"}}
+            {{/if}} News
+          </div>
+        </div>
+      </div>
+    {{/ionSideMenu}}
+
+  {{/ionSideMenus}}
+</template>
+
+
+
+<template name="tabsChat">
+{{#ionBody}}
+
+  {{#ionSideMenuContainer side="left"}}
+
+    {{> sidemenu}}
+
+    {{#ionSideMenuContent}}
+  
+      {{> ionNavBar class="bar-calm"}}
+
+      {{#ionNavView}}
+        
+        {{#ionView}}
+            {{> yield}}
+
+            {{#if isAndroid}}
+              {{#ionTabs style="android" class="tabs-color-calm"}}
+                {{> ionTab title="Recent" path="chat.recent" icon="android-time"}}
+                {{> ionTab title="Groups" path="chat.groups" icon="android-person"}}
+                {{> ionTab title="Search" path="chat.search" icon="android-search"}}
+              {{/ionTabs}}
+            {{else}}
+              {{#ionTabs style="ios" class="tabs-color-calm"}}
+                {{> ionTab title="Recent" path="chat.recent" iconOff="ios-clock-outline" iconOn="ios-clock"}}
+                {{> ionTab title="Groups" path="chat.groups" iconOff="ios-people-outline" iconOn="ios-people"}}
+                {{> ionTab title="Search" path="chat.search" iconOff="ios-search" iconOn="ios-search-strong"}}
+              {{/ionTabs}}
+            {{/if}}
+          {{/ionView}}
+
+      {{/ionNavView}}
+
+    {{/ionSideMenuContent}}
+
+  {{/ionSideMenuContainer}}
+
+{{/ionBody}}
+</template>
+
+
+<template name="tabsNews">
+{{#ionBody}}
+
+  {{#ionSideMenuContainer side="left"}}
+
+    {{> sidemenu}}
+
+    {{#ionSideMenuContent}}
+  
+      {{> ionNavBar class="bar-royal"}}
+
+      {{#ionNavView}}
+        
+        {{#ionView}}
+            {{> yield}}
+
+            {{#if isAndroid}}
+              {{#ionTabs style="android" class="tabs-color-royal"}}
+                {{> ionTab title="Upcoming" path="news.upcoming" icon="android-notifications-none"}}
+                {{> ionTab title="Recent" path="news.recent" icon="android-time"}}
+              {{/ionTabs}}
+            {{else}}
+              {{#ionTabs style="ios" class="tabs-color-royal"}}
+                {{> ionTab title="Upcoming" path="news.upcoming" iconOff="ios-bell-outline" iconOn="ios-bell"}}
+                {{> ionTab title="Recent" path="news.recent" iconOff="ios-clock-outline" iconOn="ios-clock"}}
+              {{/ionTabs}}
+            {{/if}}
+          {{/ionView}}
+
+      {{/ionNavView}}
+
+    {{/ionSideMenuContent}}
+
+  {{/ionSideMenuContainer}}
+
+{{/ionBody}}
+</template>

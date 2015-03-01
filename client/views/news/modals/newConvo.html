@@ -1,0 +1,52 @@
+<!-- <template name="_newConvo">
+  {{#ionModal title="New Conversation"}}
+    
+    <div class="list">
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          {{> esInput index=indexes placeholder="Enter a username..." }}
+        </label>
+      </div>
+
+      {{#ifEsHasNoResults index=indexes}}
+        {{#ionItem class="no-results"}}
+          <div class="no-results">Sorry, nobody found!</div>
+        {{/ionItem}}
+      {{/ifEsHasNoResults}}
+
+      {{#ifEsIsSearching index=indexes}}
+        {{#ionItem class="no-results"}}
+          <div>Loading...</div>
+        {{/ionItem}}
+      {{/ifEsIsSearching}}
+
+      {{#esEach index="chatIndex"}}
+        {{#ionItem path="chat.show" buttonRight=true avatar=true class="item-icon-right"}}
+          <img src="/profile.jpg">
+          <h2>{{usernames}}</h2>
+          <p><strong><span data-livestamp="{{dateUpdated}}"></span></strong>: {{lastMessage}}</p>
+          {{> ionIcon icon='ios-arrow-forward' class="positive"}}
+        {{/ionItem}}
+      {{/esEach}}
+
+      <div class="item item-divider">
+        Add a conversation
+      </div>
+
+      {{#esEach index="userIndex"}}
+        {{#ionItem buttonRight=true avatar=true class="item-icon-right"}}
+          <img class="new-convo" src="/profile.jpg">
+          <h2 class="new-convo">{{username}}</h2>
+          <p class="new-convo">{{profile.firstName}} {{profile.lastName}}</p>
+          {{> ionIcon icon='ios-plus-outline' class="positive"}}
+        {{/ionItem}}
+      {{/esEach}}
+
+      <button class="button button-clear">
+        {{> esLoadMoreButton index=indexes}}
+      </button>
+
+    </div>
+
+  {{/ionModal}}
+</template> -->

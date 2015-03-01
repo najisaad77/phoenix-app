@@ -1,0 +1,29 @@
+.background-outside {
+	width: 100vw;
+	height: 100vh;
+	background: #0064a6; /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  #741669 0%, #0064a6 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#741669), color-stop(100%,#0064a6)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  #741669 0%,#0064a6 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  #741669 0%,#0064a6 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  #741669 0%,#0064a6 100%); /* IE10+ */
+	background: linear-gradient(135deg,  #741669 0%,#0064a6 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#741669', endColorstr='#0064a6',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+
+.ctnr-outside {
+	max-width: 23em;
+	margin: 0 auto;
+	position: relative;
+  	top: 50%;
+  	-webkit-transform: translateY(-50%);
+  	-ms-transform: translateY(-50%);
+  	transform: translateY(-50%);
+}
+
+.logo {
+	padding: 0 3em 5em 3em;
+}
+
+

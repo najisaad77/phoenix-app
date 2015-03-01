@@ -1,0 +1,105 @@
+<template name="newsUpcoming">
+
+  {{#contentFor "headerButtonLeft"}}
+      <button class="button button-clear pull-left" data-ion-menu-toggle="left">
+      {{#if isAndroid}}
+        {{> ionIcon icon='android-more-vertical'}}
+      {{else}}
+        {{> ionIcon icon='navicon'}}
+      {{/if}}
+    </button>
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Upcoming</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-left" data-ion-modal="_newNews">
+    {{#if isAndroid}}
+      {{> ionIcon icon='android-create'}}
+    {{else}}
+      {{> ionIcon icon='ios-compose-outline'}}
+    {{/if}}
+    </button>
+  {{/contentFor}}
+
+
+  {{#ionContent}}
+
+        {{#each news}}
+          {{#ionItem path="news.show" buttonRight=true avatar=true class="item-icon-right"}}
+              <img src="/profile.jpg">
+              <h2>{{usernames}}</h2>
+              <p><strong><span data-livestamp="{{dateUpdated}}"></span></strong>: {{lastMessage}}</p>
+            {{> ionIcon icon='ios-arrow-forward' class="positive"}}
+          {{/ionItem}}
+        {{/each}}
+
+  {{/ionContent}}
+
+</template>
+
+
+
+<template name="newsShowUpcoming">
+
+  {{#contentFor "headerButtonLeft"}}
+      {{>ionNavBackButton path="news.upcoming"}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">{{name}}</h1>
+  {{/contentFor}}
+
+<!--   {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear" data-ion-popover="_chatPopover">
+      {{#if isAndroid}}
+        {{> ionIcon icon='android-more-vertical'}}
+      {{else}}
+        {{> ionIcon icon='ios-more'}}
+      {{/if}}
+    </button>
+  {{/contentFor}} -->
+
+  {{#ionView}}
+    {{#ionContent}}
+        <div class="list card">
+          <div class="item item-avatar item-text-wrap">
+              <img src="/profile.jpg">
+              <h2>{{content}}</h2>
+              <p class="subdued">Sent by {{username}} <span data-livestamp="{{dateCreated}}"></span></p>
+          </div>
+        </div>
+    {{/ionContent}}
+
+    {{#ionFooterBar class="item-input-inset"}}
+      <form id="send-message">
+      <label class="item-input-wrapper">
+        <input id="message-content" type="text" placeholder="Type a message..."/>
+      </label>
+    </form>
+    {{/ionFooterBar}}
+
+  {{/ionView}}
+
+</template>
+
+
+
+<!-- <template name="_chatPopover">
+  {{#ionPopover}}
+    <div class="content">
+      <div class="list">
+        <button class="button button-full button-assertive" data-action="showActionSheet">
+          {{#if isAndroid}}
+            {{> ionIcon icon='android-delete'}}
+          {{else}}
+            {{> ionIcon icon='ios-trash'}}
+          {{/if}}
+          Delete
+        </button>
+      </div>
+    </div>
+  {{/ionPopover}}
+</template> -->

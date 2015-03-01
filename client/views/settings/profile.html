@@ -1,0 +1,115 @@
+<template name="profile">
+
+  {{#contentFor "headerButtonLeft"}}
+      {{>ionNavBackButton path="settings"}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Hi {{#if firstName}}{{firstName}}{{else}}{{username}}{{/if}}!</h1>
+  {{/contentFor}}
+
+
+    {{#ionContent}}
+      <div class="list card">
+        <div class="item">
+            <h2>{{username}}</h2>
+            <p>username</p>
+        </div>
+        <a data-ion-modal="_editName" class="item item-icon-right">
+            <h2>{{firstName}} {{lastName}}</h2>
+            <p>your name</p>
+          {{> ionIcon icon="ios-arrow-right" class="dark"}}
+        </a>
+
+      </div>
+    <div class="list card">
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Hostel
+        </div>
+        <select>
+          <option selected value="Daybug">Daybug</option>
+          <option value="Ekukulweni">Ekukulweni</option>
+          <option value="Esiveni">Esiveni</option>
+          <option value="Emhlabeni">Emhlabeni</option>
+          <option value="Elangeni">Elangeni</option>
+        </select>
+      </label>
+
+      <label class="item item-input item-select">
+        <div class="input-label">
+          House
+        </div>
+        <select>
+          <option selected value="Guedes">Guedes</option>
+          <option value="Henderson">Henderson</option>
+          <option value="Sterb">Stern</option>
+        </select>
+      </label>
+
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Gender
+        </div>
+        <select>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option selected value="Other">Other</option>
+        </select>
+      </label>
+
+
+      <div class="item item-toggle">
+          Destroy school
+          <label class="toggle toggle-dark">
+           <input type="checkbox">
+           <div class="track">
+             <div class="handle"></div>
+           </div>
+         </label>
+        </div>
+
+      </div>
+    {{/ionContent}}
+
+</template>
+
+
+
+
+<template name="_editName">
+  {{#ionModal customTemplate=true}}
+    <form id="editName">
+      <div class="bar bar-header bar-dark">
+        <button data-dismiss="modal" type="button" class="button button-clear button-assertive">Cancel</button>
+        <h2 class="title">Update your name</h2>
+        <button type="submit" class="button button-clear">Save</button>
+      </div>
+      <div class="content has-header overflow-scroll list">
+        <label class="item item-input">
+          <input type="text" id="firstName" placeholder="Given Name">
+        </label>
+        <label class="item item-input">
+          <input type="text" id="lastName" placeholder="Surname">
+        </label>
+      </div>
+    </form>
+  {{/ionModal}}
+</template>
+
+
+
+<!-- <template name="_profile">
+  {{#ionModal title="New Conversation" customTemplate=true}}
+    <form id="new-convo-form">
+      <div class="bar bar-header bar-stable">
+        <button data-dismiss="modal" type="button" class="button button-clear">Cancel</button>
+        <h2 class="title">Create Conversation</h2>
+        <button type="submit" class="button button-positive button-clear">Create</button>
+      </div>
+      <div class="content has-header overflow-scroll padding">
+        <input type="text" class="form-control" id="partner-user" placeholder="Type a name...">
+      </div>
+    </form>
+  {{/ionModal}}
+</template> -->

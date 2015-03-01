@@ -1,0 +1,146 @@
+<template name="settings">
+
+  {{#contentFor "headerButtonLeft"}}
+      <button class="button button-clear pull-left" data-ion-menu-toggle="left">
+      {{#if isAndroid}}
+        {{> ionIcon icon='android-more-vertical'}}
+      {{else}}
+        {{> ionIcon icon='navicon'}}
+      {{/if}}
+    </button>
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Settings</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear" data-action="logoutActionSheet">
+    {{> ionIcon icon="log-out" class="assertive"}}
+    </button>
+  {{/contentFor}}
+
+
+    {{#ionContent}}
+      {{#ionList}}
+
+        <div class="list card">
+          <a href="{{pathFor 'profile'}}" class="item item-avatar item-icon-right">
+              <img src="profile.jpg">
+              <h2>Connor Bär {{username}}</h2>
+              <p>Edit your profile.</p>
+            {{> ionIcon icon="ios-arrow-right" class="dark"}}
+          </a>
+        </div>
+
+        <div class="item item-toggle">
+            Enable notifications
+            <label class="toggle toggle-dark">
+             <input type="checkbox">
+             <div class="track">
+               <div class="handle"></div>
+             </div>
+           </label>
+          </div>
+
+        {{#ionItem path="disclaimer" iconRight=true}}
+          Terms and Conditions
+          {{> ionIcon icon="ios-arrow-right"}}
+        {{/ionItem}}
+
+        {{#ionItem path="acknowledgements" iconRight=true}}
+          Acknowledgements
+          {{> ionIcon icon="ios-arrow-right"}}
+        {{/ionItem}}
+
+        {{/ionList}}
+    {{/ionContent}}
+
+</template>
+
+
+
+<!-- <template name="_settings">
+  {{#ionModal title="New Conversation" customTemplate=true}}
+    <form id="new-convo-form">
+      <div class="bar bar-header bar-stable">
+        <button data-dismiss="modal" type="button" class="button button-clear">Cancel</button>
+        <h2 class="title">Create Conversation</h2>
+        <button type="submit" class="button button-positive button-clear">Create</button>
+      </div>
+      <div class="content has-header overflow-scroll padding">
+        <input type="text" class="form-control" id="partner-user" placeholder="Type a name...">
+      </div>
+    </form>
+  {{/ionModal}}
+</template> -->
+
+
+
+<template name="disclaimer">
+
+  {{#contentFor "headerButtonLeft"}}
+      {{>ionNavBackButton path="settings"}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Terms and Conditions</h1>
+  {{/contentFor}}
+
+<!--   {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear" data-ion-popover="_chatPopover">
+      {{#if isAndroid}}
+        {{> ionIcon icon='android-more-vertical'}}
+      {{else}}
+        {{> ionIcon icon='ios-more'}}
+      {{/if}}
+    </button>
+  {{/contentFor}} -->
+
+
+  {{#ionContent}}
+    {{#ionList}}
+        
+          {{#ionItem}}
+            <p>Coming soon.</p>
+          {{/ionItem}}
+
+      {{/ionList}}
+    {{/ionContent}}
+
+</template>
+
+
+
+<template name="acknowledgements">
+
+  {{#contentFor "headerButtonLeft"}}
+      {{>ionNavBackButton path="settings"}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Acknowledgements</h1>
+  {{/contentFor}}
+
+<!--   {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear" data-ion-popover="_chatPopover">
+      {{#if isAndroid}}
+        {{> ionIcon icon='android-more-vertical'}}
+      {{else}}
+        {{> ionIcon icon='ios-more'}}
+      {{/if}}
+    </button>
+  {{/contentFor}} -->
+
+
+  {{#ionContent}}
+    {{#ionList}}
+        
+          {{#ionItem}}
+            <p>Created by <a href="http://connorbaer.org">Connor Bär</a>.</p>
+          {{/ionItem}}
+
+      {{/ionList}}
+  {{/ionContent}}
+
+</template>
